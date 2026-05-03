@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MetroMate Bengaluru</string>
+    <string name="title_activity_main">MetroMate Bengaluru</string>
+    <string name="package_name">app.nammametro.offline</string>
+    <string name="custom_url_scheme">app.nammametro.offline</string>
+</resources>

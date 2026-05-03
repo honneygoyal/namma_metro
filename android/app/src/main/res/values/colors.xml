@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="metromate_ink">#07111f</color>
+    <color name="metromate_teal">#0f766e</color>
+    <color name="metromate_sky">#e0f7fa</color>
+    <color name="metromate_gold">#facc15</color>
+    <color name="colorPrimary">#0f766e</color>
+    <color name="colorPrimaryDark">#07111f</color>
+    <color name="colorAccent">#facc15</color>
+</resources>

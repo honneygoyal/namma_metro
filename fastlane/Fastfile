@@ -1,0 +1,111 @@
+default_platform(:android)
+require "shellwords"
+
+PROJECT_ROOT = File.expand_path("..", __dir__)
+
+def root_sh(command)
+  sh("cd #{PROJECT_ROOT.shellescape} && #{command}")
+end
+
+def app_store_api_key
+  key_path = ENV["APP_STORE_CONNECT_API_KEY_PATH"]
+  return nil unless key_path && File.exist?(key_path)
+
+  app_store_connect_api_key(
+    key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+    issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+    key_filepath: key_path
+  )
+end
+
+def android_package_name
+  ENV["ANDROID_PACKAGE_NAME"] || "app.nammametro.offline"
+end
+
+def ios_identifier
+  ENV["IOS_APP_IDENTIFIER"] || "app.nammametro.offline"
+end
+
+platform :android do
+  desc "Build the Android release bundle after refreshing web and brand assets"
+  lane :build do
+    root_sh("npm run brand:assets")
+    root_sh("npm run build")
+    root_sh("npx cap sync android")
+    gradle(project_dir: File.join(PROJECT_ROOT, "android"), task: "bundle", build_type: "Release")
+  end
+
+  desc "Upload Google Play listing metadata and generated store images only"
+  lane :metadata do
+    supply(
+      package_name: android_package_name,
+      json_key: ENV["GOOGLE_PLAY_JSON_KEY"],
+      metadata_path: File.join(PROJECT_ROOT, "fastlane/metadata/android"),
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_changelogs: false,
+      skip_upload_screenshots: false,
+      validate_only: ENV["SUPPLY_VALIDATE_ONLY"] == "true"
+    )
+  end
+
+  desc "Build and upload to Google Play internal testing"
+  lane :internal do
+    build
+    supply(
+      package_name: android_package_name,
+      json_key: ENV["GOOGLE_PLAY_JSON_KEY"],
+      aab: File.join(PROJECT_ROOT, "android/app/build/outputs/bundle/release/app-release.aab"),
+      track: "internal",
+      metadata_path: File.join(PROJECT_ROOT, "fastlane/metadata/android"),
+      skip_upload_screenshots: false,
+      validate_only: ENV["SUPPLY_VALIDATE_ONLY"] == "true"
+    )
+  end
+end
+
+platform :ios do
+  desc "Create the App Store Connect app record after bundle id exists"
+  lane :create do
+    produce(
+      app_identifier: ios_identifier,
+      app_name: "MetroMate Bengaluru",
+      sku: ENV["IOS_SKU"] || "metromate-bengaluru",
+      language: "English",
+      app_version: "1.0",
+      team_id: ENV["APPLE_TEAM_ID"]
+    )
+  end
+
+  desc "Build iOS with Capacitor after the native ios/ project exists"
+  lane :build do
+    root_sh("npm run brand:assets")
+    root_sh("npm run build")
+    root_sh("npx cap sync ios")
+    gym(
+      project: File.join(PROJECT_ROOT, "ios/App/App.xcodeproj"),
+      scheme: "App",
+      output_directory: File.join(PROJECT_ROOT, "build/ios"),
+      clean: true,
+      export_method: "app-store",
+      xcargs: ENV["APPLE_TEAM_ID"] ? "DEVELOPMENT_TEAM=#{ENV["APPLE_TEAM_ID"]}" : nil
+    )
+  end
+
+  desc "Upload App Store Connect metadata only"
+  lane :metadata do
+    options = {
+      app_identifier: ios_identifier,
+      metadata_path: File.join(PROJECT_ROOT, "fastlane/metadata/ios"),
+      screenshots_path: File.join(PROJECT_ROOT, "fastlane/screenshots/ios"),
+      skip_binary_upload: true,
+      skip_screenshots: false,
+      force: true,
+      run_precheck_before_submit: true,
+      precheck_include_in_app_purchases: false
+    }
+    api_key = app_store_api_key
+    options[:api_key] = api_key if api_key
+    deliver(options)
+  end
+end

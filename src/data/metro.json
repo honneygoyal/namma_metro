@@ -1,0 +1,1390 @@
+{
+  "dataVersion": "2026.05-osm-coordinates",
+  "lastUpdated": "2026-05-03",
+  "currency": "INR",
+  "sourceNotes": [
+    "Starter offline dataset compiled from public route references for operational Purple, Green and Yellow lines.",
+    "Fares are approximate and bundled for offline planning. Re-verify against BMRCL before production release.",
+    "Station coordinates were refreshed from OpenStreetMap subway station points via Overpass API on 2026-05-03 for offline nearest-station calculation."
+  ],
+  "fareByStops": [
+    {
+      "minStops": 0,
+      "maxStops": 0,
+      "fare": 10
+    },
+    {
+      "minStops": 1,
+      "maxStops": 2,
+      "fare": 10
+    },
+    {
+      "minStops": 3,
+      "maxStops": 4,
+      "fare": 20
+    },
+    {
+      "minStops": 5,
+      "maxStops": 6,
+      "fare": 30
+    },
+    {
+      "minStops": 7,
+      "maxStops": 8,
+      "fare": 40
+    },
+    {
+      "minStops": 9,
+      "maxStops": 10,
+      "fare": 50
+    },
+    {
+      "minStops": 11,
+      "maxStops": 15,
+      "fare": 60
+    },
+    {
+      "minStops": 16,
+      "maxStops": 20,
+      "fare": 70
+    },
+    {
+      "minStops": 21,
+      "maxStops": 25,
+      "fare": 80
+    },
+    {
+      "minStops": 26,
+      "maxStops": 99,
+      "fare": 90
+    }
+  ],
+  "lines": [
+    {
+      "id": "purple",
+      "name": "Purple Line",
+      "shortName": "Purple",
+      "color": "#7c3aed",
+      "textColor": "#ffffff",
+      "terminalA": "Whitefield (Kadugodi)",
+      "terminalB": "Challaghatta",
+      "averageMinutesBetweenStations": 2.25,
+      "stations": [
+        "whitefield-kadugodi",
+        "hopefarm-channasandra",
+        "kadugodi-tree-park",
+        "pattandur-agrahara",
+        "sri-sathya-sai-hospital",
+        "nallurhalli",
+        "kundalahalli",
+        "seetharamapalya",
+        "hoodi",
+        "garudacharapalya",
+        "singayyanapalya",
+        "krishnarajapura",
+        "benniganahalli",
+        "baiyappanahalli",
+        "swami-vivekananda-road",
+        "indiranagar",
+        "halasuru",
+        "trinity",
+        "mahatma-gandhi-road",
+        "cubbon-park",
+        "vidhana-soudha",
+        "central-college",
+        "majestic",
+        "city-railway-station",
+        "magadi-road",
+        "hosahalli",
+        "vijayanagara",
+        "attiguppe",
+        "deepanjali-nagar",
+        "mysuru-road",
+        "nayandahalli",
+        "rajarajeshwari-nagar",
+        "jnanabharathi",
+        "pattanagere",
+        "kengeri-bus-terminal",
+        "kengeri",
+        "challaghatta"
+      ]
+    },
+    {
+      "id": "green",
+      "name": "Green Line",
+      "shortName": "Green",
+      "color": "#16a34a",
+      "textColor": "#ffffff",
+      "terminalA": "Madavara",
+      "terminalB": "Silk Institute",
+      "averageMinutesBetweenStations": 2.2,
+      "stations": [
+        "madavara",
+        "chikkabidarakallu",
+        "manjunathanagar",
+        "nagasandra",
+        "dasarahalli",
+        "jalahalli",
+        "peenya-industry",
+        "peenya",
+        "goraguntepalya",
+        "yeshwanthpur",
+        "sandal-soap-factory",
+        "mahalakshmi",
+        "rajajinagar",
+        "mahakavi-kuvempu-road",
+        "srirampura",
+        "mantri-square-sampige-road",
+        "majestic",
+        "chickpet",
+        "kr-market",
+        "national-college",
+        "lalbagh",
+        "south-end-circle",
+        "jayanagar",
+        "rv-road",
+        "banashankari",
+        "jaya-prakash-nagar",
+        "yelachenahalli",
+        "konanakunte-cross",
+        "doddakallasandra",
+        "vajarahalli",
+        "thalaghattapura",
+        "silk-institute"
+      ]
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow Line",
+      "shortName": "Yellow",
+      "color": "#facc15",
+      "textColor": "#1f2937",
+      "terminalA": "Rashtreeya Vidyalaya Road",
+      "terminalB": "Delta Electronics Bommasandra",
+      "averageMinutesBetweenStations": 2.5,
+      "stations": [
+        "rv-road",
+        "ragigudda",
+        "jayadeva-hospital",
+        "btm-layout",
+        "central-silk-board",
+        "bommanahalli",
+        "hongasandra",
+        "kudlu-gate",
+        "singasandra",
+        "hosa-road",
+        "beratena-agrahara",
+        "infosys-foundation-konappana-agrahara",
+        "electronic-city",
+        "huskur-road",
+        "biocon-hebbagodi",
+        "delta-electronics-bommasandra"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "whitefield-kadugodi",
+      "name": "Whitefield (Kadugodi)",
+      "aliases": [
+        "Kadugodi",
+        "Whitefield"
+      ],
+      "lat": 12.9957428,
+      "lng": 77.7579489,
+      "facilities": [
+        "parking",
+        "accessibility"
+      ],
+      "landmarks": [
+        "Whitefield railway area"
+      ]
+    },
+    {
+      "id": "hopefarm-channasandra",
+      "name": "Hopefarm Channasandra",
+      "aliases": [
+        "Hope Farm",
+        "Channasandra"
+      ],
+      "lat": 12.9873426,
+      "lng": 77.7538033,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Hope Farm junction"
+      ]
+    },
+    {
+      "id": "kadugodi-tree-park",
+      "name": "Kadugodi Tree Park",
+      "aliases": [
+        "Tree Park"
+      ],
+      "lat": 12.9856503,
+      "lng": 77.7470121,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Kadugodi Tree Park"
+      ]
+    },
+    {
+      "id": "pattandur-agrahara",
+      "name": "Pattandur Agrahara",
+      "aliases": [
+        "Pattandur"
+      ],
+      "lat": 12.9876393,
+      "lng": 77.7377718,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "ITPL area"
+      ]
+    },
+    {
+      "id": "sri-sathya-sai-hospital",
+      "name": "Sri Sathya Sai Hospital",
+      "aliases": [
+        "Sai Hospital"
+      ],
+      "lat": 12.9811949,
+      "lng": 77.7275361,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Sri Sathya Sai Hospital"
+      ]
+    },
+    {
+      "id": "nallurhalli",
+      "name": "Nallurhalli",
+      "aliases": [],
+      "lat": 12.9766408,
+      "lng": 77.7248845,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Nallurhalli"
+      ]
+    },
+    {
+      "id": "kundalahalli",
+      "name": "Kundalahalli",
+      "aliases": [],
+      "lat": 12.977594,
+      "lng": 77.7155586,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Kundalahalli Gate"
+      ]
+    },
+    {
+      "id": "seetharamapalya",
+      "name": "Seetharamapalya",
+      "aliases": [
+        "Seetharampalya"
+      ],
+      "lat": 12.9808558,
+      "lng": 77.7087854,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Graphite India area"
+      ]
+    },
+    {
+      "id": "hoodi",
+      "name": "Hoodi",
+      "aliases": [],
+      "lat": 12.9888029,
+      "lng": 77.711326,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Hoodi"
+      ]
+    },
+    {
+      "id": "garudacharapalya",
+      "name": "Garudacharapalya",
+      "aliases": [
+        "Garudacharpalya"
+      ],
+      "lat": 12.9934505,
+      "lng": 77.7036768,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Mahadevapura"
+      ]
+    },
+    {
+      "id": "singayyanapalya",
+      "name": "Singayyanapalya",
+      "aliases": [
+        "Singayyanapalya"
+      ],
+      "lat": 12.9965445,
+      "lng": 77.6927176,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Phoenix Marketcity area"
+      ]
+    },
+    {
+      "id": "krishnarajapura",
+      "name": "Krishnarajapura",
+      "aliases": [
+        "KR Pura",
+        "KR Puram",
+        "K R Puram"
+      ],
+      "lat": 12.9999024,
+      "lng": 77.6776703,
+      "facilities": [
+        "parking",
+        "accessibility"
+      ],
+      "landmarks": [
+        "KR Puram railway station"
+      ]
+    },
+    {
+      "id": "benniganahalli",
+      "name": "Benniganahalli",
+      "aliases": [],
+      "lat": 12.9965158,
+      "lng": 77.6684619,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Benniganahalli lake area"
+      ]
+    },
+    {
+      "id": "baiyappanahalli",
+      "name": "Baiyappanahalli",
+      "aliases": [
+        "Byappanahalli"
+      ],
+      "lat": 12.9907594,
+      "lng": 77.6523612,
+      "facilities": [
+        "parking",
+        "accessibility"
+      ],
+      "landmarks": [
+        "Baiyappanahalli depot"
+      ]
+    },
+    {
+      "id": "swami-vivekananda-road",
+      "name": "Swami Vivekananda Road",
+      "aliases": [
+        "SV Road"
+      ],
+      "lat": 12.9859306,
+      "lng": 77.644897,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Old Madras Road"
+      ]
+    },
+    {
+      "id": "indiranagar",
+      "name": "Indiranagar",
+      "aliases": [],
+      "lat": 12.9783325,
+      "lng": 77.6386612,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "CMH Road"
+      ]
+    },
+    {
+      "id": "halasuru",
+      "name": "Halasuru",
+      "aliases": [
+        "Ulsoor"
+      ],
+      "lat": 12.9764992,
+      "lng": 77.626686,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Ulsoor"
+      ]
+    },
+    {
+      "id": "trinity",
+      "name": "Trinity",
+      "aliases": [],
+      "lat": 12.9730218,
+      "lng": 77.6170205,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Trinity Circle"
+      ]
+    },
+    {
+      "id": "mahatma-gandhi-road",
+      "name": "Mahatma Gandhi Road",
+      "aliases": [
+        "MG Road",
+        "M G Road"
+      ],
+      "lat": 12.9755264,
+      "lng": 77.6067902,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "MG Road"
+      ]
+    },
+    {
+      "id": "cubbon-park",
+      "name": "Cubbon Park",
+      "aliases": [],
+      "lat": 12.9809575,
+      "lng": 77.5975756,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Cubbon Park"
+      ]
+    },
+    {
+      "id": "vidhana-soudha",
+      "name": "Dr. B.R. Ambedkar Station, Vidhana Soudha",
+      "aliases": [
+        "Vidhana Soudha",
+        "Ambedkar Station"
+      ],
+      "lat": 12.9787419,
+      "lng": 77.5916385,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Vidhana Soudha"
+      ]
+    },
+    {
+      "id": "central-college",
+      "name": "Sir M. Visvesvaraya Station, Central College",
+      "aliases": [
+        "Central College",
+        "Visvesvaraya"
+      ],
+      "lat": 12.9745197,
+      "lng": 77.58422,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Central College"
+      ]
+    },
+    {
+      "id": "majestic",
+      "name": "Nadaprabhu Kempegowda Station, Majestic",
+      "aliases": [
+        "Majestic",
+        "Kempegowda",
+        "KSR",
+        "Bangalore City"
+      ],
+      "lat": 12.9757079,
+      "lng": 77.5728757,
+      "facilities": [
+        "interchange",
+        "toilets",
+        "accessibility"
+      ],
+      "landmarks": [
+        "Kempegowda Bus Station",
+        "KSR Bengaluru railway station"
+      ]
+    },
+    {
+      "id": "city-railway-station",
+      "name": "City Railway Station",
+      "aliases": [
+        "KSR Bengaluru",
+        "Bangalore City Railway Station"
+      ],
+      "lat": 12.9758768,
+      "lng": 77.5653767,
+      "facilities": [
+        "railway",
+        "accessibility"
+      ],
+      "landmarks": [
+        "KSR Bengaluru railway station"
+      ]
+    },
+    {
+      "id": "magadi-road",
+      "name": "Magadi Road",
+      "aliases": [],
+      "lat": 12.975632,
+      "lng": 77.5553523,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Magadi Road"
+      ]
+    },
+    {
+      "id": "hosahalli",
+      "name": "Sri Balagangadharanatha Swamiji Station, Hosahalli",
+      "aliases": [
+        "Hosahalli"
+      ],
+      "lat": 12.9742933,
+      "lng": 77.5456215,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Hosahalli"
+      ]
+    },
+    {
+      "id": "vijayanagara",
+      "name": "Vijayanagara",
+      "aliases": [
+        "Vijayanagar"
+      ],
+      "lat": 12.9709559,
+      "lng": 77.5374044,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Vijayanagar"
+      ]
+    },
+    {
+      "id": "attiguppe",
+      "name": "Attiguppe",
+      "aliases": [],
+      "lat": 12.9618931,
+      "lng": 77.5335788,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Attiguppe"
+      ]
+    },
+    {
+      "id": "deepanjali-nagar",
+      "name": "Deepanjali Nagar",
+      "aliases": [],
+      "lat": 12.9520578,
+      "lng": 77.5370122,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Deepanjali Nagar"
+      ]
+    },
+    {
+      "id": "mysuru-road",
+      "name": "Mysuru Road",
+      "aliases": [
+        "Mysore Road"
+      ],
+      "lat": 12.9467183,
+      "lng": 77.5301588,
+      "facilities": [
+        "parking",
+        "accessibility"
+      ],
+      "landmarks": [
+        "Mysuru Road satellite bus area"
+      ]
+    },
+    {
+      "id": "nayandahalli",
+      "name": "Nayandahalli",
+      "aliases": [],
+      "lat": 12.9416715,
+      "lng": 77.5251166,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Nayandahalli junction"
+      ]
+    },
+    {
+      "id": "rajarajeshwari-nagar",
+      "name": "Rajarajeshwari Nagar",
+      "aliases": [
+        "RR Nagar"
+      ],
+      "lat": 12.9365996,
+      "lng": 77.5196788,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "RR Nagar"
+      ]
+    },
+    {
+      "id": "jnanabharathi",
+      "name": "Jnanabharathi",
+      "aliases": [
+        "Jnana Bharathi"
+      ],
+      "lat": 12.9354357,
+      "lng": 77.5124063,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Bangalore University"
+      ]
+    },
+    {
+      "id": "pattanagere",
+      "name": "Pattanagere",
+      "aliases": [],
+      "lat": 12.9242505,
+      "lng": 77.4983509,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Pattanagere"
+      ]
+    },
+    {
+      "id": "kengeri-bus-terminal",
+      "name": "Kengeri Bus Terminal",
+      "aliases": [
+        "Kengeri TTMC"
+      ],
+      "lat": 12.914689,
+      "lng": 77.4878557,
+      "facilities": [
+        "bus",
+        "parking",
+        "accessibility"
+      ],
+      "landmarks": [
+        "Kengeri bus terminal"
+      ]
+    },
+    {
+      "id": "kengeri",
+      "name": "Kengeri",
+      "aliases": [],
+      "lat": 12.9079105,
+      "lng": 77.4765784,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Kengeri"
+      ]
+    },
+    {
+      "id": "challaghatta",
+      "name": "Challaghatta",
+      "aliases": [],
+      "lat": 12.8973539,
+      "lng": 77.4612877,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Challaghatta"
+      ]
+    },
+    {
+      "id": "madavara",
+      "name": "Madavara",
+      "aliases": [
+        "BIEC"
+      ],
+      "lat": 13.0574214,
+      "lng": 77.4728055,
+      "facilities": [
+        "parking",
+        "accessibility"
+      ],
+      "landmarks": [
+        "BIEC"
+      ]
+    },
+    {
+      "id": "chikkabidarakallu",
+      "name": "Chikkabidarakallu",
+      "aliases": [
+        "Jindal"
+      ],
+      "lat": 13.0523616,
+      "lng": 77.4879154,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Jindal area"
+      ]
+    },
+    {
+      "id": "manjunathanagar",
+      "name": "Manjunathanagar",
+      "aliases": [],
+      "lat": 13.0500898,
+      "lng": 77.4944461,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Manjunathanagar"
+      ]
+    },
+    {
+      "id": "nagasandra",
+      "name": "Nagasandra",
+      "aliases": [],
+      "lat": 13.0479536,
+      "lng": 77.5001422,
+      "facilities": [
+        "parking",
+        "accessibility"
+      ],
+      "landmarks": [
+        "Nagasandra"
+      ]
+    },
+    {
+      "id": "dasarahalli",
+      "name": "Dasarahalli",
+      "aliases": [],
+      "lat": 13.0432607,
+      "lng": 77.5125535,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "T Dasarahalli"
+      ]
+    },
+    {
+      "id": "jalahalli",
+      "name": "Jalahalli",
+      "aliases": [],
+      "lat": 13.0394104,
+      "lng": 77.5197351,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Jalahalli Cross"
+      ]
+    },
+    {
+      "id": "peenya-industry",
+      "name": "Peenya Industry",
+      "aliases": [
+        "Peenya Industrial Area"
+      ],
+      "lat": 13.0363176,
+      "lng": 77.5254924,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Peenya industrial area"
+      ]
+    },
+    {
+      "id": "peenya",
+      "name": "Peenya",
+      "aliases": [],
+      "lat": 13.0330189,
+      "lng": 77.533201,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Peenya"
+      ]
+    },
+    {
+      "id": "goraguntepalya",
+      "name": "Goraguntepalya",
+      "aliases": [],
+      "lat": 13.0283319,
+      "lng": 77.5408483,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Goraguntepalya"
+      ]
+    },
+    {
+      "id": "yeshwanthpur",
+      "name": "Yeshwanthpur",
+      "aliases": [
+        "Yeshwanthpura",
+        "Yesvantpur"
+      ],
+      "lat": 13.0232678,
+      "lng": 77.5498751,
+      "facilities": [
+        "railway",
+        "accessibility"
+      ],
+      "landmarks": [
+        "Yeshwanthpur railway station"
+      ]
+    },
+    {
+      "id": "sandal-soap-factory",
+      "name": "Sandal Soap Factory",
+      "aliases": [],
+      "lat": 13.0146544,
+      "lng": 77.5539839,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Orion Mall"
+      ]
+    },
+    {
+      "id": "mahalakshmi",
+      "name": "Mahalakshmi",
+      "aliases": [
+        "Mahalakshmi Layout"
+      ],
+      "lat": 13.0080475,
+      "lng": 77.5488066,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Mahalakshmi Layout"
+      ]
+    },
+    {
+      "id": "rajajinagar",
+      "name": "Rajajinagar",
+      "aliases": [],
+      "lat": 13.0005247,
+      "lng": 77.5496568,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Rajajinagar"
+      ]
+    },
+    {
+      "id": "mahakavi-kuvempu-road",
+      "name": "Mahakavi Kuvempu Road",
+      "aliases": [
+        "Kuvempu Road"
+      ],
+      "lat": 12.9985297,
+      "lng": 77.5568986,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Rajajinagar 2nd Block"
+      ]
+    },
+    {
+      "id": "srirampura",
+      "name": "Srirampura",
+      "aliases": [
+        "Srirampuram"
+      ],
+      "lat": 12.9965253,
+      "lng": 77.5631963,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Srirampura"
+      ]
+    },
+    {
+      "id": "mantri-square-sampige-road",
+      "name": "Mantri Square Sampige Road",
+      "aliases": [
+        "Sampige Road",
+        "Mantri Square"
+      ],
+      "lat": 12.9904629,
+      "lng": 77.5707293,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Mantri Square Mall"
+      ]
+    },
+    {
+      "id": "chickpet",
+      "name": "Chickpet",
+      "aliases": [
+        "Chikpet"
+      ],
+      "lat": 12.9668974,
+      "lng": 77.5745566,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Chickpet market"
+      ]
+    },
+    {
+      "id": "kr-market",
+      "name": "Krishna Rajendra Market",
+      "aliases": [
+        "KR Market",
+        "K R Market"
+      ],
+      "lat": 12.9608788,
+      "lng": 77.5746578,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "KR Market"
+      ]
+    },
+    {
+      "id": "national-college",
+      "name": "National College",
+      "aliases": [],
+      "lat": 12.9505266,
+      "lng": 77.5736898,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Basavanagudi"
+      ]
+    },
+    {
+      "id": "lalbagh",
+      "name": "Lalbagh",
+      "aliases": [
+        "Lal Bagh"
+      ],
+      "lat": 12.9465265,
+      "lng": 77.580016,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Lalbagh Botanical Garden"
+      ]
+    },
+    {
+      "id": "south-end-circle",
+      "name": "South End Circle",
+      "aliases": [],
+      "lat": 12.9382573,
+      "lng": 77.5800556,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "South End Circle"
+      ]
+    },
+    {
+      "id": "jayanagar",
+      "name": "Jayanagar",
+      "aliases": [],
+      "lat": 12.9295069,
+      "lng": 77.5801439,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Jayanagar 4th Block"
+      ]
+    },
+    {
+      "id": "rv-road",
+      "name": "Rashtreeya Vidyalaya Road",
+      "aliases": [
+        "RV Road",
+        "R V Road"
+      ],
+      "lat": 12.9215807,
+      "lng": 77.5802015,
+      "facilities": [
+        "interchange",
+        "accessibility"
+      ],
+      "landmarks": [
+        "RV Road"
+      ]
+    },
+    {
+      "id": "banashankari",
+      "name": "Banashankari",
+      "aliases": [],
+      "lat": 12.9152208,
+      "lng": 77.573598,
+      "facilities": [
+        "bus",
+        "accessibility"
+      ],
+      "landmarks": [
+        "Banashankari bus stand"
+      ]
+    },
+    {
+      "id": "jaya-prakash-nagar",
+      "name": "Jaya Prakash Nagar",
+      "aliases": [
+        "JP Nagar",
+        "J P Nagar"
+      ],
+      "lat": 12.9074747,
+      "lng": 77.5731279,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "JP Nagar"
+      ]
+    },
+    {
+      "id": "yelachenahalli",
+      "name": "Yelachenahalli",
+      "aliases": [],
+      "lat": 12.8960498,
+      "lng": 77.5701194,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Yelachenahalli"
+      ]
+    },
+    {
+      "id": "konanakunte-cross",
+      "name": "Konanakunte Cross",
+      "aliases": [],
+      "lat": 12.8889671,
+      "lng": 77.5626665,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Konanakunte Cross"
+      ]
+    },
+    {
+      "id": "doddakallasandra",
+      "name": "Doddakallasandra",
+      "aliases": [],
+      "lat": 12.8846435,
+      "lng": 77.5527546,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Doddakallasandra"
+      ]
+    },
+    {
+      "id": "vajarahalli",
+      "name": "Vajarahalli",
+      "aliases": [],
+      "lat": 12.8774369,
+      "lng": 77.5447414,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Vajarahalli"
+      ]
+    },
+    {
+      "id": "thalaghattapura",
+      "name": "Thalaghattapura",
+      "aliases": [],
+      "lat": 12.8714097,
+      "lng": 77.5383958,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Thalaghattapura"
+      ]
+    },
+    {
+      "id": "silk-institute",
+      "name": "Silk Institute",
+      "aliases": [
+        "Anjanapura"
+      ],
+      "lat": 12.8617298,
+      "lng": 77.5299545,
+      "facilities": [
+        "parking",
+        "accessibility"
+      ],
+      "landmarks": [
+        "Silk Institute"
+      ]
+    },
+    {
+      "id": "ragigudda",
+      "name": "Ragigudda",
+      "aliases": [],
+      "lat": 12.9170807,
+      "lng": 77.5883015,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Ragigudda temple area"
+      ]
+    },
+    {
+      "id": "jayadeva-hospital",
+      "name": "Jayadeva Hospital",
+      "aliases": [
+        "Jayadeva",
+        "Jayadeva Interchange"
+      ],
+      "lat": 12.916731,
+      "lng": 77.5999663,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Jayadeva Hospital"
+      ]
+    },
+    {
+      "id": "btm-layout",
+      "name": "BTM Layout",
+      "aliases": [
+        "BTM"
+      ],
+      "lat": 12.9165878,
+      "lng": 77.6081182,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "BTM Layout"
+      ]
+    },
+    {
+      "id": "central-silk-board",
+      "name": "Central Silk Board",
+      "aliases": [
+        "Silk Board"
+      ],
+      "lat": 12.9165816,
+      "lng": 77.620567,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Silk Board junction"
+      ]
+    },
+    {
+      "id": "bommanahalli",
+      "name": "Bommanahalli",
+      "aliases": [],
+      "lat": 12.9106157,
+      "lng": 77.6264782,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Bommanahalli"
+      ]
+    },
+    {
+      "id": "hongasandra",
+      "name": "Hongasandra",
+      "aliases": [],
+      "lat": 12.9016952,
+      "lng": 77.6319861,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Hongasandra"
+      ]
+    },
+    {
+      "id": "kudlu-gate",
+      "name": "Kudlu Gate",
+      "aliases": [],
+      "lat": 12.8899259,
+      "lng": 77.6392156,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Kudlu Gate"
+      ]
+    },
+    {
+      "id": "singasandra",
+      "name": "Singasandra",
+      "aliases": [],
+      "lat": 12.8808178,
+      "lng": 77.6448456,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Singasandra"
+      ]
+    },
+    {
+      "id": "hosa-road",
+      "name": "Hosa Road",
+      "aliases": [],
+      "lat": 12.8707491,
+      "lng": 77.652447,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Hosa Road"
+      ]
+    },
+    {
+      "id": "beratena-agrahara",
+      "name": "Beratena Agrahara",
+      "aliases": [],
+      "lat": 12.8638665,
+      "lng": 77.6578624,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Beratena Agrahara"
+      ]
+    },
+    {
+      "id": "infosys-foundation-konappana-agrahara",
+      "name": "Infosys Foundation Konappana Agrahara",
+      "aliases": [
+        "Konappana Agrahara",
+        "Infosys Foundation"
+      ],
+      "lat": 12.8464134,
+      "lng": 77.6711655,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Konappana Agrahara"
+      ]
+    },
+    {
+      "id": "electronic-city",
+      "name": "Electronic City",
+      "aliases": [
+        "E City"
+      ],
+      "lat": 12.8565053,
+      "lng": 77.6635228,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Electronic City"
+      ]
+    },
+    {
+      "id": "huskur-road",
+      "name": "Huskur Road",
+      "aliases": [],
+      "lat": 12.8391572,
+      "lng": 77.6773716,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Huskur Road"
+      ]
+    },
+    {
+      "id": "biocon-hebbagodi",
+      "name": "Biocon Hebbagodi",
+      "aliases": [
+        "Hebbagodi"
+      ],
+      "lat": 12.8290325,
+      "lng": 77.6813744,
+      "facilities": [
+        "accessibility"
+      ],
+      "landmarks": [
+        "Biocon campus area"
+      ]
+    },
+    {
+      "id": "delta-electronics-bommasandra",
+      "name": "Delta Electronics Bommasandra",
+      "aliases": [
+        "Bommasandra",
+        "Delta Electronics"
+      ],
+      "lat": 12.8193944,
+      "lng": 77.6883453,
+      "facilities": [
+        "parking",
+        "accessibility"
+      ],
+      "landmarks": [
+        "Bommasandra industrial area"
+      ]
+    }
+  ]
+}

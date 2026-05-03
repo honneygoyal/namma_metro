@@ -1,0 +1,1 @@
+Initial MetroMate Bengaluru release with offline route planning, station search, interactive map, live location support, journey mode, and multilingual UI.

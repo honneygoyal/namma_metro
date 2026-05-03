@@ -1,0 +1,16 @@
+MetroMate Bengaluru is an offline-first route planner for Bengaluru metro travel.
+
+Search for stations, plan routes across Purple, Green, and Yellow lines, and view route details including estimated fare, time, stop count, board-toward direction, and interchanges. The interactive map supports station search, zoom, route highlighting, selected-station actions, and current or nearest station markers when location permission is enabled.
+
+MetroMate is designed for everyday commuters and visitors who want a fast, clear metro companion without creating an account.
+
+Features:
+- Offline route planning
+- Interactive searchable metro map
+- Nearest-station lookup with manual station fallback
+- Journey mode with current station context
+- Recent routes and favorites
+- Multilingual UI options
+- No sign-in required
+
+MetroMate is an independent travel utility and is not affiliated with Bangalore Metro Rail Corporation Limited. Timings, fares, coordinates, and station data should be verified before important travel decisions.

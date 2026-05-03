@@ -1,0 +1,46 @@
+html {
+  background: #f6f7fb;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.fatal-screen {
+  align-items: center;
+  background:
+    radial-gradient(circle at top left, rgba(20, 184, 166, 0.2), transparent 26rem),
+    linear-gradient(135deg, #0f172a, #155e75);
+  color: white;
+  display: grid;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.fatal-screen div {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  margin: 0 auto;
+  max-width: 520px;
+  padding: 24px;
+}
+
+.fatal-screen p {
+  color: #99f6e4;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.fatal-screen h1 {
+  font-size: 28px;
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+
+.fatal-screen span {
+  color: #dbeafe;
+}
