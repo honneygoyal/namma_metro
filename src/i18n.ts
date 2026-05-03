@@ -85,7 +85,7 @@ const en = {
   stationInfo: 'Station info',
   nearestFound: 'Nearest station selected',
   locationBlocked: 'Location permission is unavailable. You can still choose stations manually.',
-  locationPermissionNeeded: 'Precise location permission is not enabled. Tap Nearest again and allow precise location access when asked.',
+  locationPermissionNeeded: 'Live location is optional. Tap Enable live location or Nearest, then allow precise location to auto-select your station.',
   locationUnclear: 'GPS location looks inaccurate',
   chooseStationManually: 'Please search and choose your station manually.',
   gpsUnreliable: 'GPS is too far from the metro network or too inaccurate, so it was not applied as your current station.',

@@ -76,6 +76,14 @@ Build iOS with Capacitor after the native ios/ project exists
 
 Upload App Store Connect metadata only
 
+### ios screenshots
+
+```sh
+[bundle exec] fastlane ios screenshots
+```
+
+Upload App Store Connect screenshots only
+
 ### ios upload
 
 ```sh

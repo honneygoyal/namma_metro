@@ -173,6 +173,23 @@ platform :ios do
     deliver(options)
   end
 
+  desc "Upload App Store Connect screenshots only"
+  lane :screenshots do
+    options = {
+      app_identifier: ios_identifier,
+      metadata_path: File.join(PROJECT_ROOT, "fastlane/metadata/ios"),
+      screenshots_path: File.join(PROJECT_ROOT, "fastlane/screenshots/ios"),
+      skip_metadata: true,
+      skip_binary_upload: true,
+      skip_screenshots: false,
+      force: true,
+      run_precheck_before_submit: false
+    }
+    api_key = app_store_api_key
+    options[:api_key] = api_key if api_key
+    deliver(options)
+  end
+
   desc "Upload the signed iOS IPA to App Store Connect/TestFlight"
   lane :upload do
     ipa_path = File.join(PROJECT_ROOT, "build/ios/App.ipa")

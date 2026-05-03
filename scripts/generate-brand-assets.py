@@ -188,6 +188,7 @@ def main():
     save(public / "icon-192.png", make_icon(192))
     save(public / "icon-512.png", make_icon(512))
     save(store / "ios/app-icon-1024.png", make_icon(1024, 0.18, transparent_corners=False).convert("RGB"))
+    save(ROOT / "ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-512@2x.png", make_icon(1024, 0.18, transparent_corners=False).convert("RGB"))
     save(store / "ios/marketing-header.png", make_feature_graphic(1200, 628))
     save(store / "android/app-icon-512.png", make_icon(512, 0.18))
     save(store / "android/feature-graphic.png", make_feature_graphic())

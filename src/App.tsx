@@ -242,7 +242,19 @@ function App() {
   useEffect(() => {
     if (startupLocationAttempted.current) return
     startupLocationAttempted.current = true
-    void requestAndUseLocation(true, { fallbackToManual: true, silentSuccess: true })
+    async function applyGrantedLocationOrFallback() {
+      try {
+        const permissions = await Geolocation.checkPermissions()
+        if (permissions.location === 'granted') {
+          await requestAndUseLocation(true, { fallbackToManual: true, silentSuccess: true })
+          return
+        }
+      } catch {
+        // Web fallback: browsers may not support permission preflight, so keep manual selection open.
+      }
+      switchToManualStationSelection(t('locationPermissionNeeded'))
+    }
+    void applyGrantedLocationOrFallback()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
