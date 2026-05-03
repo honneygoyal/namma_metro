@@ -44,6 +44,14 @@ Build and upload to Google Play internal testing
 
 ## iOS
 
+### ios api_create
+
+```sh
+[bundle exec] fastlane ios api_create
+```
+
+Create or find the Bundle ID and App Store app record using the App Store Connect API key
+
 ### ios create
 
 ```sh
@@ -67,6 +75,14 @@ Build iOS with Capacitor after the native ios/ project exists
 ```
 
 Upload App Store Connect metadata only
+
+### ios upload
+
+```sh
+[bundle exec] fastlane ios upload
+```
+
+Upload the signed iOS IPA to App Store Connect/TestFlight
 
 ----
 

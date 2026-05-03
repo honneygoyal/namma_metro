@@ -26,6 +26,20 @@ def ios_identifier
   ENV["IOS_APP_IDENTIFIER"] || "app.nammametro.offline"
 end
 
+def xcode_api_auth_args
+  key_path = ENV["APP_STORE_CONNECT_API_KEY_PATH"]
+  key_id = ENV["APP_STORE_CONNECT_API_KEY_ID"]
+  issuer_id = ENV["APP_STORE_CONNECT_ISSUER_ID"]
+  return "-allowProvisioningUpdates" unless key_path && key_id && issuer_id && File.exist?(key_path)
+
+  [
+    "-allowProvisioningUpdates",
+    "-authenticationKeyPath #{key_path.shellescape}",
+    "-authenticationKeyID #{key_id.shellescape}",
+    "-authenticationKeyIssuerID #{issuer_id.shellescape}"
+  ].join(" ")
+end
+
 platform :android do
   desc "Build the Android release bundle after refreshing web and brand assets"
   lane :build do
@@ -65,6 +79,55 @@ platform :android do
 end
 
 platform :ios do
+  desc "Create or find the Bundle ID and App Store app record using the App Store Connect API key"
+  lane :api_create do
+    require "spaceship"
+
+    key_path = ENV["APP_STORE_CONNECT_API_KEY_PATH"]
+    UI.user_error!("APP_STORE_CONNECT_API_KEY_PATH is missing or invalid") unless key_path && File.exist?(key_path)
+
+    Spaceship::ConnectAPI.auth(
+      key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+      filepath: key_path
+    )
+
+    bundle = Spaceship::ConnectAPI::BundleId.find(ios_identifier)
+    unless bundle
+      bundle = Spaceship::ConnectAPI::BundleId.create(
+        name: "MetroMate Bengaluru",
+        platform: "IOS",
+        identifier: ios_identifier,
+        seed_id: nil
+      )
+      UI.success("Created Bundle ID #{bundle.identifier}")
+    end
+
+    app = Spaceship::ConnectAPI::App.find(ios_identifier)
+    unless app
+      begin
+        response = Spaceship::ConnectAPI::App.create(
+          name: "MetroMate Bengaluru",
+          version_string: "1.0",
+          sku: ENV["IOS_SKU"] || "metromate-bengaluru",
+          primary_locale: "en-US",
+          bundle_id: ios_identifier,
+          platforms: ["IOS"],
+          company_name: "Xcape Reality Private Limited"
+        )
+        app = response.to_models.find { |model| model.is_a?(Spaceship::ConnectAPI::App) }
+        UI.success("Created App Store Connect app #{app&.id || ios_identifier}")
+      rescue => error
+        raise unless error.to_s.include?("does not allow 'CREATE'")
+
+        UI.important("Bundle ID is ready, but this App Store Connect API key cannot create the app record.")
+        UI.important("Create the app record in App Store Connect UI, or rerun `bundle exec fastlane ios create` with a fresh Apple ID session.")
+      end
+    end
+
+    UI.success("Apple Bundle ID is ready for #{ios_identifier}")
+  end
+
   desc "Create the App Store Connect app record after bundle id exists"
   lane :create do
     produce(
@@ -88,7 +151,8 @@ platform :ios do
       output_directory: File.join(PROJECT_ROOT, "build/ios"),
       clean: true,
       export_method: "app-store",
-      xcargs: ENV["APPLE_TEAM_ID"] ? "DEVELOPMENT_TEAM=#{ENV["APPLE_TEAM_ID"]}" : nil
+      xcargs: ENV["APPLE_TEAM_ID"] ? "DEVELOPMENT_TEAM=#{ENV["APPLE_TEAM_ID"]}" : nil,
+      export_xcargs: xcode_api_auth_args
     )
   end
 
@@ -107,5 +171,18 @@ platform :ios do
     api_key = app_store_api_key
     options[:api_key] = api_key if api_key
     deliver(options)
+  end
+
+  desc "Upload the signed iOS IPA to App Store Connect/TestFlight"
+  lane :upload do
+    ipa_path = File.join(PROJECT_ROOT, "build/ios/App.ipa")
+    UI.user_error!("IPA not found at #{ipa_path}. Run `bundle exec fastlane ios build` first.") unless File.exist?(ipa_path)
+
+    api_key = app_store_api_key
+    upload_to_testflight(
+      api_key: api_key,
+      ipa: ipa_path,
+      skip_waiting_for_build_processing: true
+    )
   end
 end

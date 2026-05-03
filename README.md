@@ -14,7 +14,7 @@ A polished offline-first Bengaluru metro route planner built with React, Vite, T
 - UI language options for English, Kannada, Hindi, Tamil, Telugu, and Malayalam.
 - Android Capacitor project with geolocation support.
 - iOS Capacitor project with geolocation support.
-- Fastlane scaffold for Android and iOS metadata, screenshots, and build lanes.
+- Fastlane lanes for Android AAB builds, iOS App Store Connect setup, signed iOS IPA builds, TestFlight upload, metadata, and screenshots.
 
 ## Commands
 
@@ -51,8 +51,10 @@ Fastlane is scaffolded but not installed by default:
 bundle install
 bundle exec fastlane android metadata
 bundle exec fastlane android internal
-bundle exec fastlane ios create
+bundle exec fastlane ios api_create
 bundle exec fastlane ios metadata
+bundle exec fastlane ios build
+bundle exec fastlane ios upload
 ```
 
 Copy `fastlane/.env.example` to `fastlane/.env` and fill in real Play Console/App Store credentials plus support, marketing, and privacy URLs before uploading metadata.

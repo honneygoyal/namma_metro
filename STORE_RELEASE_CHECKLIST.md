@@ -5,6 +5,7 @@
 - App ID / bundle ID: `app.nammametro.offline`
 - App name: `MetroMate Bengaluru`
 - Android AAB: `android/app/build/outputs/bundle/release/app-release.aab`
+- iOS IPA: `build/ios/App.ipa`
 - Google Play graphics:
   - Icon: `fastlane/metadata/android/en-US/images/icon.png`
   - Feature graphic: `fastlane/metadata/android/en-US/images/featureGraphic.png`
@@ -34,15 +35,18 @@ SUPPLY_VALIDATE_ONLY=true bundle exec fastlane android metadata
 bundle exec fastlane android internal
 ```
 
+Current status: Android release bundle is built locally, but Play Console app creation and upload are still pending because no `GOOGLE_PLAY_JSON_KEY` service-account file has been configured.
+
 ## App Store Connect
 
-Before running Fastlane, make sure the bundle ID `app.nammametro.offline` exists in Apple Developer Certificates, Identifiers & Profiles and the latest agreements are accepted.
+The App Store Connect app record has been created.
 
 - Platform: iOS
 - Name: MetroMate Bengaluru
 - Primary language: English
 - Bundle ID: `app.nammametro.offline`
 - SKU: `metromate-bengaluru`
+- App Store Connect app ID: `6766063330`
 - Category: Navigation or Travel
 - Price: Free
 - App privacy: location is used for nearest-station assistance; no account required; recent routes/preferences are stored on device
@@ -60,12 +64,13 @@ Fill `fastlane/.env` from `fastlane/.env.example`, especially:
 Then:
 
 ```bash
-bundle exec fastlane ios create
+bundle exec fastlane ios api_create
 bundle exec fastlane ios metadata
 bundle exec fastlane ios build
+bundle exec fastlane ios upload
 ```
 
-The iOS archive currently stops until `APPLE_TEAM_ID` / signing is configured in Xcode or passed through Fastlane.
+Current status: the Bundle ID exists, the App Store Connect app exists, the IPA builds successfully, and the first binary was uploaded to App Store Connect/TestFlight. Metadata upload partially ran, then Fastlane stopped on Apple's `No data` response, so finish/verify screenshots, privacy, pricing, category, content rights, age rating, and app privacy in App Store Connect before review submission.
 
 ## Review Timing
 
